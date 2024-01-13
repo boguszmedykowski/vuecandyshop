@@ -3,9 +3,8 @@ import App from './App.vue';
 import axios from 'axios';
 import router from './router';
 
-// Konfiguracja Axios
-axios.defaults.baseURL = 'https://127.0.0.1/500';
-// axios.defaults.headers.common['Authorization'] = 'Bearer YOUR_TOKEN';
+// Konfiguracja Axios z wykorzystaniem zmiennej środowiskowej
+axios.defaults.baseURL = process.env.VUE_APP_API_URL;
 
 // Tworzenie aplikacji Vue
 const app = createApp(App);

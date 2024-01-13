@@ -11,7 +11,6 @@
 </template>
 
 <script>
-import axios from 'axios';
 
 export default {
   name: 'CandyCart',
@@ -25,7 +24,7 @@ export default {
   },
   methods: {
     fetchCartItems() {
-      axios.get('http://localhost:5000/cart')
+      this.$axios.get('/cart')
         .then(response => {
           this.cartItems = response.data;
         })

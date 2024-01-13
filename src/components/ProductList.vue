@@ -27,7 +27,7 @@ export default {
     },
     methods: {
         fetchProducts() {
-            axios.get('http://localhost:5000/products')
+            this.$axios.get('/products')
                 .then(response => {
                     this.products = response.data.map(product => ({ ...product, quantity: 1 }));
                 })

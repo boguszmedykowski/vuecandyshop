@@ -16,8 +16,6 @@
 </template>
 
 <script>
-import axios from 'axios';
-
 export default {
   data() {
     return {
@@ -29,7 +27,8 @@ export default {
   },
   methods: {
     submitForm() {
-      axios.post('http://localhost:5000/add_product', this.product)
+      // Używanie globalnie skonfigurowanego Axios
+      this.$axios.post('/add_product', this.product)
         .then(response => {
           alert('Produkt został dodany!');
           console.log(response.data);
