@@ -1,13 +1,13 @@
 <template>
     <div class="product-grid">
         <div v-for="product in products" :key="product.id" class="product-container">
-            <h2>{{ product.name }}</h2>
-            <p>Cena: {{ product.price }} zł</p>
+            <h2 class="product-name">{{ product.name }}</h2>
+            <p class="product-price">Cena: {{ product.price }} zł</p>
             <div class="form-field">
-                <label for="quantity">Ilość:</label>
-                <input type="number" :id="'quantity-' + product.id" min="1" v-model="product.quantity">
+                <label for="quantity" class="quantity-label">Ilość:</label>
+                <input type="number" :id="'quantity-' + product.id" min="1" v-model="product.quantity" class="quantity-input">
             </div>
-            <button @click="addToCart(product)">Dodaj do Koszyka</button>
+            <button @click="addToCart(product)" class="add-to-cart-button">Dodaj do Koszyka</button>
         </div>
     </div>
 </template>
@@ -46,40 +46,73 @@ export default {
                     alert('Nie udało się dodać produktu do koszyka.');
                 });
         }
-
     }
 };
 </script>
   
 <style>
+/* Style dla ProductList */
+
 .product-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
-    padding: 20px;
-    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .product-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    background-color: #ffcccb;
     padding: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    margin: 10px;
     border-radius: 10px;
+    text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.product-name {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ff1493;
+}
+
+.product-price {
+    font-size: 18px;
+    color: #6495ed;
+    padding: 5px;
 }
 
 .form-field {
-    margin-bottom: 15px;
+    margin-top: 10px;
 }
 
-.form-field label {
-    margin-right: 10px;
+.quantity-label {
+    font-size: 16px;
+    color: #ff1493;
+    margin-right: 5px;
 }
 
-button {
+.quantity-input {
+    font-size: 16px;
+    width: 20%;
+    color: #ff1493;
+    background-color: #ffeaf5;
+    border: 2px solid #ff1493;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+.add-to-cart-button {
+    font-size: 18px;
+    background-color: #ff1493;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
     cursor: pointer;
-    /* Dodaj więcej stylów dla przycisku, jeśli potrzebujesz */
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+.add-to-cart-button:hover {
+    background-color: #ff4500;
 }
 </style>
-  

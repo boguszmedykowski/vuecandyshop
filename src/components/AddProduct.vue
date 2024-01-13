@@ -1,16 +1,16 @@
 <template>
   <div class="form-container">
-    <h2>Dodaj Produkt</h2>
+    <h2 class="form-title">Dodaj Produkt</h2>
     <form @submit.prevent="submitForm" class="add-product-form">
       <div class="form-field">
-        <label for="name">Nazwa produktu:</label>
-        <input type="text" id="name" v-model="product.name">
+        <label for="name" class="form-label">Nazwa</label>
+        <input type="text" id="name" v-model="product.name" class="form-input">
       </div>
       <div class="form-field">
-        <label for="price">Cena produktu:</label>
-        <input type="number" id="price" v-model="product.price">
+        <label for="price" class="form-label">Cena</label>
+        <input type="number" id="price" v-model="product.price" class="form-input">
       </div>
-      <button type="submit">Dodaj Produkt</button>
+      <button type="submit" class="form-button">Dodaj Produkt</button>
     </form>
   </div>
 </template>
@@ -43,28 +43,62 @@ export default {
 </script>
 
 <style>
+/* Style dla formularza */
+
 .form-container {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh; /* Wysokość na cały ekran */
   flex-direction: column;
+  align-items: center; /* Wyśrodkowanie na osi X */
+  justify-content: center; /* Wyśrodkowanie na osi Y */
+  height: 50vh; /* Ustawienie wysokości na całą widoczność okna przeglądarki */
+  background-color: #ffcccb; /* Kolor tła w stylu cukierkowym */
+  text-align: right;
+}
+
+.form-title {
+  font-size: 24px;
+  color: #ff1493;
+  margin-bottom: 20px;
 }
 
 .add-product-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  background-color: #ffeaf5;
   padding: 20px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .form-field {
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
-.form-field label {
-  margin-right: 10px;
+.form-label {
+  font-size: 18px;
+  color: #ff1493;
+  margin-right: 5px;
+
+}
+
+.form-input {
+  font-size: 16px;
+  color: #ff1493;
+  background-color: #fff;
+  border: 2px solid #ff1493;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+
+.form-button {
+  font-size: 18px;
+  background-color: #ff1493;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  transition: background-color 0.3s;
+}
+
+.form-button:hover {
+  background-color: #ff4500;
 }
 </style>

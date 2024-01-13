@@ -20,44 +20,51 @@ export default {
 </script>
 
 <style>
+
 .candy-navbar {
-  background-color: #ffccff; /* Pastelowy róż */
-  position: fixed;
-  top: 0;
-  width: 100%;
-  padding: 10px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  z-index: 100;
+  background-color: #ff3430; /* Kolor tła w stylu cukierkowym */
+  padding: 10px; /* Wewnętrzny padding dla nawigacji */
+  border-radius: 10px 10px 0 0;
 }
 
 .navbar-content {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
+  justify-content: space-between; /* Wyśrodkowanie na osi X z odstępem między elementami */
+  align-items: center; /* Wyśrodkowanie na osi Y */
 }
 
 .navbar-brand {
-  font-size: 1.5em;
-  font-weight: bold;
-  color: #5d3a58; /* Ciemniejszy odcień fioletu */
-  text-shadow: 1px 1px #ffccff; /* Lekki różowy cień */
+  font-size: 36px; /* Wielkość czcionki */
+  font-weight: bold; /* Pogrubienie czcionki */
+  color: #ffeaf5; /* Różowy kolor tekstu */
+  -webkit-text-stroke: #000;
+  font-family: 'cursive';
+
 }
 
 .navbar-menu {
   display: flex;
-  justify-content: center;
+  gap: 20px; /* Odstęp między elementami menu */
 }
 
 .navbar-item {
-  margin: 0 10px; /* Dodaje marginesy po bokach każdego elementu */
-  text-decoration: none;
-  color: #ff88cc; /* Różowe akcenty */
-  font-size: 1em;
+  font-size: 18px; /* Wielkość czcionki */
+  color: #6495ed; /* Niebieski kolor tekstu */
+  text-decoration: none; /* Usunięcie podkreślenia linków */
+  border: 2px solid #6495ed; /* Gruba niebieska ramka */
+  padding: 5px 10px; /* Wewnętrzny padding przycisku */
+  border-radius: 10px; /* Zaokrąglenie rogów przycisku */
+  transition: background-color 0.3s, color 0.3s; /* Animacja zmiany koloru tła i tekstu */
+  background-color: rgb(255, 225, 252);
 }
 
 .navbar-item:hover {
-  color: #ff66aa; /* Nieco ciemniejszy róż przy najechaniu */
-  text-decoration: underline;
+  background-color: #ff4500; /* Kolor tła po najechaniu myszką */
+  color: #fff; /* Kolor tekstu po najechaniu myszką */
+}
+
+.navbar-item:active {
+  background-color: #ff1493; /* Kolor tła po wciśnięciu przycisku */
+  color: #fff; /* Kolor tekstu po wciśnięciu przycisku */
 }
 </style>

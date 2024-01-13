@@ -10,6 +10,11 @@ const routes = [
         component: AddProduct
     },
     {
+        path: '/',
+        name: '/',
+        component: ProductList
+    },
+    {
         path: '/ProductList',
         name: 'ProductList',
         component: ProductList
