@@ -8,6 +8,8 @@
         <router-link to="/addProduct" class="navbar-item">Dodaj produkt</router-link>
         <router-link to="/ProductList" class="navbar-item">Lista produktów</router-link>
         <router-link to="/CandyCart" class="navbar-item">Koszyk</router-link>
+        <router-link to="/UserLogin" class="navbar-item">Login</router-link>
+        <router-link to="/UserRegister" class="navbar-item">Register</router-link>
       </div>
     </div>
   </nav>
@@ -22,7 +24,7 @@ export default {
 <style>
 
 .candy-navbar {
-  background-color: #ff3430; /* Kolor tła w stylu cukierkowym */
+  background-color: #f3a7b0; /* jasnoróżowy kolor tła */
   padding: 10px; /* Wewnętrzny padding dla nawigacji */
   border-radius: 10px 10px 0 0;
 }
@@ -36,10 +38,8 @@ export default {
 .navbar-brand {
   font-size: 36px; /* Wielkość czcionki */
   font-weight: bold; /* Pogrubienie czcionki */
-  color: #ffeaf5; /* Różowy kolor tekstu */
-  -webkit-text-stroke: #000;
-  font-family: 'cursive';
-
+  color: #fff; /* Jasny kolor tekstu */
+  font-family: 'Cookie', cursive; /* Stylowa czcionka */
 }
 
 .navbar-menu {
@@ -49,22 +49,24 @@ export default {
 
 .navbar-item {
   font-size: 18px; /* Wielkość czcionki */
-  color: #6495ed; /* Niebieski kolor tekstu */
+  color: #5a2a27; /* Ciasteczkowy brąz */
   text-decoration: none; /* Usunięcie podkreślenia linków */
-  border: 2px solid #6495ed; /* Gruba niebieska ramka */
+  border: 2px solid #f3a7b0; /* Jasnoróżowa ramka */
   padding: 5px 10px; /* Wewnętrzny padding przycisku */
   border-radius: 10px; /* Zaokrąglenie rogów przycisku */
   transition: background-color 0.3s, color 0.3s; /* Animacja zmiany koloru tła i tekstu */
-  background-color: rgb(255, 225, 252);
+  background-color: #ffeaf5; /* Jasnoróżowe tło */
 }
 
 .navbar-item:hover {
-  background-color: #ff4500; /* Kolor tła po najechaniu myszką */
-  color: #fff; /* Kolor tekstu po najechaniu myszką */
+  background-color: #f3a7b0; /* Różowe tło po najechaniu myszką */
+  color: #fff; /* Jasny kolor tekstu po najechaniu myszką */
 }
 
 .navbar-item:active {
-  background-color: #ff1493; /* Kolor tła po wciśnięciu przycisku */
-  color: #fff; /* Kolor tekstu po wciśnięciu przycisku */
+  background-color: #d98695; /* Ciemniejszy róż po wciśnięciu przycisku */
+  color: #fff; /* Jasny kolor tekstu po wciśnięciu przycisku */
 }
+
 </style>
+

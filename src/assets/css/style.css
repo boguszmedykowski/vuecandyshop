@@ -1,7 +1,58 @@
+
 body {
-  background-color: #0041ba;
+  background-color: #f3e0dc; /* jasny, ciepły kolor tła */
+  color: #5a2a27; /* główny kolor tekstu */
+  font-family: 'Cookie', sans-serif; /* przyjemny font, jeśli dostępny */
 }
 
-button {
+h1, h2, h3, h4, h5, h6 {
+  color: #5a2a27;
+}
+
+.form-container {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Style dla pól formularzy */
+.form-input {
+  border: 2px solid #5a2a27;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  padding: 5px;
+  width: 90%;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-button {
+  background-color: #5a2a27;
+  border: none;
+  border-radius: 5px;
+  color: white;
   cursor: pointer;
+  padding: 10px 20px;
+  text-transform: uppercase;
+}
+
+.form-button:hover {
+  background-color: #7a3b34;
+}
+
+/* Style dla linków */
+a {
+  color: #5a2a27;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
 }

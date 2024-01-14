@@ -13,7 +13,6 @@
 </template>
   
 <script>
-import axios from 'axios';
 
 export default {
     name: 'ProductList',
@@ -36,7 +35,7 @@ export default {
                 });
         },
         addToCart(product) {
-            axios.post(`http://localhost:5000/add_to_cart/${product.id}`, { quantity: product.quantity })
+            this.$axios.post(`/add_to_cart/${product.id}`, { quantity: product.quantity })
                 .then(() => {
                     alert(`Dodano ${product.quantity} sztuk produktu ${product.name} do koszyka.`);
                     // Możesz tutaj dodać więcej logiki, na przykład odświeżenie zawartości koszyka
@@ -60,7 +59,7 @@ export default {
 }
 
 .product-container {
-    background-color: #ffcccb;
+    background-color: #f3e0dc; /* Jasny, ciepły kolor tła */
     padding: 20px;
     margin: 10px;
     border-radius: 10px;
@@ -71,12 +70,12 @@ export default {
 .product-name {
     font-size: 24px;
     font-weight: bold;
-    color: #ff1493;
+    color: #5a2a27; /* Ciasteczkowy brąz */
 }
 
 .product-price {
     font-size: 18px;
-    color: #6495ed;
+    color: #d98695; /* Delikatny róż */
     padding: 5px;
 }
 
@@ -86,23 +85,23 @@ export default {
 
 .quantity-label {
     font-size: 16px;
-    color: #ff1493;
+    color: #5a2a27; /* Ciasteczkowy brąz */
     margin-right: 5px;
 }
 
 .quantity-input {
     font-size: 16px;
     width: 20%;
-    color: #ff1493;
-    background-color: #ffeaf5;
-    border: 2px solid #ff1493;
+    color: #5a2a27; /* Ciasteczkowy brąz */
+    background-color: #ffeaf5; /* Jasny róż */
+    border: 2px solid #5a2a27; /* Ciasteczkowy brąz */
     border-radius: 5px;
     padding: 5px 10px;
 }
 
 .add-to-cart-button {
     font-size: 18px;
-    background-color: #ff1493;
+    background-color: #d98695; /* Delikatny róż */
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -113,6 +112,7 @@ export default {
 }
 
 .add-to-cart-button:hover {
-    background-color: #ff4500;
+    background-color: #f3a7b0; /* Ciemniejszy róż */
 }
 </style>
+
