@@ -27,6 +27,9 @@ export default {
           password: this.password
         });
         console.log(response.data);
+        if (response.status === 200) {
+          this.$router.push('/ProductList')
+        }
         // Handle login success
       } catch (error) {
         console.error(error);

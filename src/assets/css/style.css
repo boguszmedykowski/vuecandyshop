@@ -60,10 +60,13 @@ a:hover {
 /* Sackbar */
 
 .snackbar {
-  visibility: hidden; /* Ukryj snackbar domyślnie */
-  min-width: 250px; /* Minimalna szerokość snackbar */
+
+}
+
+/* Style dla snackbar, gdy jest widoczny */
+.show-snackbar {
   background-color: #333; /* Kolor tła snackbar */
-  color: white; /* Kolor tekstu */
+  color: rgb(255, 0, 0); /* Kolor tekstu */
   text-align: center; /* Wyśrodkowanie tekstu */
   border-radius: 2px; /* Zaokrąglone rogi */
   padding: 16px; /* Padding wokół tekstu */
@@ -73,10 +76,6 @@ a:hover {
   bottom: 30px; /* Odległość od dołu ekranu */
   transform: translateX(-50%); /* Dalsze centrowanie w poziomie */
   box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Cień dla snackbar */
-}
-
-/* Style dla snackbar, gdy jest widoczny */
-.show-snackbar {
   visibility: visible; /* Ustaw widoczność na widoczny */
   -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s; /* Animacje fade-in i fade-out dla Webkit */
   animation: fadein 0.5s, fadeout 0.5s 2.5s; /* Animacje fade-in i fade-out */
