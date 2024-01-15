@@ -7,16 +7,20 @@
         <button type="submit">Register</button>
       </form>
     </div>
+
+    <div v-if="showSnackbar" class="show-snackbar">{{ errorMessage }}</div>
   </template>
   
   <script>
-  
   export default {
     name: 'UserRegister',
     data() {
       return {
         username: '',
-        password: ''
+        password: '',
+        errorMessage: '',
+        showSnackbar: false,
+        snackbarTimeout: null,
       }
     },
     methods: {
@@ -27,15 +31,32 @@
             password: this.password
           });
           console.log(response.data);
-          // Handle registration success
+          if (response.status === 201) {
+            this.$router.push('/UserLogin');
+          }
         } catch (error) {
           console.error(error);
-          // Handle registration error
+          if (error.response && error.response.data) {
+            // Zapisz komunikat o błędzie z serwera
+            this.errorMessage = error.response.data.error || 'Wystąpił błąd podczas rejestracji.';
+          } else {
+            // Zapisz ogólny komunikat o błędzie, jeśli odpowiedź serwera nie jest dostępna
+            this.errorMessage = 'Wystąpił błąd podczas rejestracji.';
+          }
+          this.displaySnackbar(); // Wywołaj snackbar z komunikatem o błędzie
         }
+      },
+      displaySnackbar() {
+        this.showSnackbar = true;
+        clearTimeout(this.snackbarTimeout); // Czyść poprzedni timeout, jeśli istnieje
+        this.snackbarTimeout = setTimeout(() => {
+          this.showSnackbar = false;
+        }, 3000); // Ustaw czas wyświetlania snackbar na 3 sekundy
       }
     }
-  }
+  };
   </script>
+  
 
   <style scoped>
 div {

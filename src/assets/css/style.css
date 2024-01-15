@@ -56,3 +56,50 @@ a {
 a:hover {
   text-decoration: underline;
 }
+
+/* Sackbar */
+
+.snackbar {
+  visibility: hidden; /* Ukryj snackbar domyślnie */
+  min-width: 250px; /* Minimalna szerokość snackbar */
+  background-color: #333; /* Kolor tła snackbar */
+  color: white; /* Kolor tekstu */
+  text-align: center; /* Wyśrodkowanie tekstu */
+  border-radius: 2px; /* Zaokrąglone rogi */
+  padding: 16px; /* Padding wokół tekstu */
+  position: fixed; /* Pozycja stała */
+  z-index: 1; /* Upewnij się, że snackbar jest na wierzchu */
+  left: 50%; /* Centrowanie w poziomie */
+  bottom: 30px; /* Odległość od dołu ekranu */
+  transform: translateX(-50%); /* Dalsze centrowanie w poziomie */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Cień dla snackbar */
+}
+
+/* Style dla snackbar, gdy jest widoczny */
+.show-snackbar {
+  visibility: visible; /* Ustaw widoczność na widoczny */
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s; /* Animacje fade-in i fade-out dla Webkit */
+  animation: fadein 0.5s, fadeout 0.5s 2.5s; /* Animacje fade-in i fade-out */
+}
+
+/* Animacja fade-in */
+@-webkit-keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+/* Animacja fade-out */
+@-webkit-keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
