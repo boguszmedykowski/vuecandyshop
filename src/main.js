@@ -5,6 +5,7 @@ import router from './router';
 
 // Konfiguracja Axios z wykorzystaniem zmiennej środowiskowej
 axios.defaults.baseURL = process.env.VUE_APP_API_URL;
+axios.defaults.withCredentials = true; // Ustawienie withCredentials globalnie
 
 // Tworzenie aplikacji Vue
 const app = createApp(App);
