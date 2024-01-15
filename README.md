@@ -1,7 +1,3 @@
-# frontend
-
-## Project setup
-
 ```
 npm install
 ```
@@ -18,16 +14,9 @@ npm run serve
 npm run build
 ```
 
-### Lints and fixes files
-
-```
-npm run lint
-```
-
-### Customize configuration
-
-See [Configuration Reference](https://cli.vuejs.org/config/).
-
 npm install -g http-server
 cd dist
 http-server
+
+docker build -t vuecandyshop .
+docker run -d --name vuecandyshop -p 8080:8080 vuecandyshop

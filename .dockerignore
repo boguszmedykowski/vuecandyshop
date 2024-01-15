@@ -1,0 +1,33 @@
+# Logi
+logs
+*.log
+npm-debug.log*
+
+# Katalogi Node.js
+node_modules
+
+# Katalogi build
+dist
+
+# Katalogi systemowe
+.DS_Store
+.git
+.gitignore
+.svn
+.hg
+.idea
+.vscode
+
+# Pliki konfiguracyjne
+*.env
+*.env.local
+*.env.development.local
+*.env.test.local
+*.env.production.local
+
+# Inne
+README.md
+LICENSE
+.dockerignore
+Dockerfile
+.docker/
